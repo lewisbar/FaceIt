@@ -26,9 +26,16 @@ class FaceView: UIView {
         return path
     }
     
+    private func pathForMouth() -> UIBezierPath {
+        let path = UIBezierPath(arcCenter: skullCenter, radius: skullRadius/2, startAngle: 0.2*CGFloat.pi, endAngle: 0.8*CGFloat.pi, clockwise: true)
+        path.lineWidth = 3.0
+        return path
+    }
+    
     override func draw(_ rect: CGRect) {
         UIColor.blue.set()
         pathForSkull().stroke()
+        pathForMouth().stroke()
     }
 
 }
